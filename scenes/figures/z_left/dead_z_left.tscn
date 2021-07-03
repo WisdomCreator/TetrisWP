@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/z-left.png-e6a1dd69f9ff2433ff510af8ccb07b0b.stex"
+
+[node name="dead_z_left" type="RigidBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 10, 0 )
+texture = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 10, 0 )
+polygon = PoolVector2Array( 10.0176, 0.0373235, 30.0088, -0.0028441, 30, 20, -9.98863, 19.9907, -10.0017, 0.00549555, -29.9559, 0.0649738, -30, -20, 10.0234, -19.9502 )
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_dead_figure_sleeping_state_changed"]

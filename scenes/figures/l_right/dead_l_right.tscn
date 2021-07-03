@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/figures/l_right/l_right.png" type="Texture" id=2]
+
+[node name="dead_z_right" type="RigidBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 10, 0 )
+rotation = -1.5708
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 10, 0 )
+rotation = -1.5708
+polygon = PoolVector2Array( 0, 10, 20, 10, 20, 30, -20, 30, -20, -30, 0, -30 )
+
+[connection signal="sleeping_state_changed" from="." to="." method="_on_dead_figure_sleeping_state_changed"]
